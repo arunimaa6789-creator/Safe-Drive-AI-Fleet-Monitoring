@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SafeDrive AI</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+<h1>SafeDrive AI Fleet Driver Monitoring</h1>
+
+<p id="time"></p>
+
+<!-- DASHBOARD CARDS -->
+
+<div class="dashboard">
+
+<div class="card">
+<h2>Driver Status</h2>
+<p id="driver-status">ACTIVE</p>
+</div>
+
+<div class="card">
+<h2>Fatigue Level</h2>
+<p id="fatigue-level">LOW</p>
+
+<div class="fatigue-bar">
+<div id="fatigue-fill"></div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Alert</h2>
+<p id="alert">No Alerts</p>
+</div>
+
+<div class="card">
+<h2>Safety Score</h2>
+<p id="safety-score">100%</p>
+</div>
+
+<div class="card">
+<h2>Fleet Risk</h2>
+<p id="fleet-risk">LOW</p>
+</div>
+
+</div>
+
+
+<!-- CAMERA SECTION -->
+
+<div class="camera-section">
+
+<h2>Live Driver Monitoring</h2>
+
+<img src="{{ url_for('video_feed') }}" width="640">
+
+</div>
+
+
+<!-- CHART SECTION -->
+
+<div class="chart-section">
+
+<h2>Driver Fatigue History</h2>
+
+<canvas id="fatigueChart"></canvas>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
